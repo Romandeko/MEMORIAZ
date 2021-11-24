@@ -81,7 +81,7 @@ public class ScoreUpdate {
 
         // new score will be controlled.
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-YYY");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyy");
         LocalDateTime now = LocalDateTime.now();
         String myDate = dtf.format(now);
         System.out.println(myDate);
