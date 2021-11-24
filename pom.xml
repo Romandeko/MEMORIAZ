@@ -1,4 +1,6 @@
- <groupId>AugustJava</groupId>
+@ -2,28 +2,29 @@
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>AugustJava</groupId>
   <artifactId>AugustJava</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
@@ -20,11 +22,10 @@
       </plugin>
     </plugins>
   </build>
+</project>
+<properties>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-     <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
   <sonar.organization>romandeko</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 </properties>
+</project>
