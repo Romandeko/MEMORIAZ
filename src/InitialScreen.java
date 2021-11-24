@@ -66,7 +66,7 @@ public class InitialScreen {
         // add final layer buttons successively.
         addCardThemeButton(buttonPanel);
         addThemeChangeButton(buttonPanel);
-        addLeaderBoardButton(buttonPanel);
+
         addStartButton(buttonPanel);
         addExitButton(buttonPanel);
 
@@ -308,13 +308,7 @@ public class InitialScreen {
 
 
     // add high score board in the initial window.
-    private void addLeaderBoardButton(JButton button) {
 
-        // Add High Scores Button and action listener.
-        JButton bf2 = new JButton("High Scores");
-        bf2.addActionListener(this::actionPerformedLeaderBoardButton);
-        button.add(bf2);
-    }
 
 
     // add start button.
@@ -342,51 +336,6 @@ public class InitialScreen {
 
     }
 
-
-    // display the highest score by reading a file.
-    private void scoreDisplay() {
-
-        // initialize template of the window.
-        String[] titles = {"Names", "Date", "Total Points"};
-        String[] names = new String[3];
-        String[] dates = new String[3];
-        String[] points = new String[3];
-
-        int count = 0;
-
-        try {
-            // read txt file that stores highest score in the game.
-            Scanner input = new Scanner("./src/highscore.txt");
-            File file = new File(input.nextLine());
-            input = new Scanner(file);
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
-                String[] lineArray = line.split(",");
-                names[count] = lineArray[0];
-                dates[count] = lineArray[1];
-                points[count] = lineArray[2];
-                count++;
-
-            }
-            input.close();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-
-        // design displayed format in the LeaderBoard Screen. It is simple and understandable.
-        StringBuilder rows = new StringBuilder(titles[0] + " | " + titles[1] + " | " + titles[2] + "\n");
-        for (int i = 0; i < names.length; i++) {
-
-            rows.append(" ").append(names[i]).append(" | ").append(dates[i]).append(" | ").append(points[i]).append(" ").append("\n");
-        }
-
-        // Display Window for points.
-        JOptionPane.showMessageDialog(null, rows.toString());
-
-
-    }
 
     // add actionListener for Exit Button.
     private void actionPerformedExitButton(ActionEvent e) {
@@ -433,12 +382,7 @@ public class InitialScreen {
 
     }
 
-    // add actionListener for Start Button.
-    private void actionPerformedLeaderBoardButton(ActionEvent e) {
-        //call a scoreDisplay method here.:
-        scoreDisplay();
 
-    }
 
     // add actionListener for Background Color Button.
     private void actionPerformedBackColorTypeButton(ActionEvent e) {
